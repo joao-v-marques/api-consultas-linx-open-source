@@ -1,0 +1,5 @@
+__pycache__
+/database/instantclient_23_6
+/database/configs.json
+.venv
+.env
