@@ -1,19 +1,28 @@
-# API Consultas Linx
+## ⚠️ Atenção: Versão Open Source
 
-API desenvolvida em **Python (Flask)** para consulta de dados no banco Oracle.  
-O projeto foi criado com foco em segurança, utilizando **API Key** e **parametrização de queries** para evitar SQL Injection.
+Este repositório é a versão **open source** da API, destinada a estudo e portfólio.  
+Para utilizá-la em um ambiente de **produção real**, é necessário fazer ajustes importantes:
+
+## 1. Queries (SELECTs)
+- As queries deste repositório usam **tabelas e colunas fictícias** para manter o projeto seguro.  
+- Substitua pelos nomes de tabelas e colunas reais do seu banco de dados de produção.
+
+## 2. Configurações (`config.py`)
+- Ajuste parâmetros de segurança, como **SECRET_KEY** e outras configurações específicas do ambiente.  
+- Verifique se a lógica de autenticação, API Key ou JWT está configurada conforme a política de segurança da sua empresa.
+
+## 3. Variáveis de ambiente (`.env`)
+- Crie ou ajuste o arquivo `.env` com suas **credenciais reais**, como usuário e senha do banco de dados, API Key, endpoints e outros valores sensíveis.  
+- **Nunca** comite `.env` no repositório público; utilize `.env.example` para ilustrar a estrutura necessária.
+
+## 4. Boas práticas
+- Teste a API em um ambiente de desenvolvimento antes de migrar para produção.  
+- Garanta que as queries estão parametrizadas para evitar **SQL Injection**.  
+- Mantenha os logs e erros seguros, sem expor dados sensíveis.
 
 ---
 
-## 🚀 Funcionalidades
-
-- Consultar todos os usuários (`/usuarios`)
-- Consultar um usuário específico (`/usuarios/<codigo_usuario>`)
-- Consultar todas as origens (`/origens`)
-- Consultar uma origem específica (`/origens/<codigo_origem>`)
-- Consultar origem com filtros de **empresa** e **revenda** (`/origens/<codigo_origem>/filtros`)
-
----
+💡 Seguindo essas instruções, você pode migrar a versão open source para produção de forma segura e funcional, mantendo boas práticas de desenvolvimento e segurança.
 
 ## 🔒 Segurança
 
@@ -68,17 +77,18 @@ Headers:
 
 ## 📂 Estrutura do projeto
 
-api-consultas-linx/
-│── app.py              # Arquivo principal Flask
-│── config.py           # Configuração de segurança (API Key)
-│── routes/             # Rotas da API
-│   ├── bp_usuarios.py
-│   ├── bp_origens.py
-│── database/           # Conexão com Oracle
-│── .env.example        # Exemplo de variáveis de ambiente
-│── requirements.txt    # Dependências do projeto
+api-consultas-open-source/
+├── app.py # Arquivo principal Flask
+├── config.py # Configuração de segurança (API Key)
+├── routes/ # Rotas da API
+│ ├── bp_usuarios.py
+│ └── bp_origens.py
+├── database/ # Conexão com Oracle
+│ └── configs.json # Configurações do banco
+├── .env.example # Exemplo de variáveis de ambiente
+└── requirements.txt # Dependências do projeto
 
 ## 📜 Licença
 
 Este projeto é de uso interno para consultas e testes.
-Sinta-se livre para clonar e adaptar conforme necessário.
+A versão Open Source é livre para ser clonada e adaptada conforme o necessário.
