@@ -52,3 +52,33 @@ Headers:
 4. Configure o arquivo .env na raiz do projeto
   API_KEY=sua_chave_api
   SECRET_KEY=sua_secret_key
+
+5. Configure seu arquivo configs.json (Com os dados da sua database) dentro da pasta database
+  {
+      "banco": {
+          "user" : "seu_user",
+          "pass" : "sua_senha",
+          "dns" : "sua_dns_de_conexão",
+          "instant_client" : "o_caminho_do_seu_instantclient"
+      }
+  }
+ 
+6. Rode o servidor
+  python app.py
+
+## 📂 Estrutura do projeto
+
+api-consultas-linx/
+│── app.py              # Arquivo principal Flask
+│── config.py           # Configuração de segurança (API Key)
+│── routes/             # Rotas da API
+│   ├── bp_usuarios.py
+│   ├── bp_origens.py
+│── database/           # Conexão com Oracle
+│── .env.example        # Exemplo de variáveis de ambiente
+│── requirements.txt    # Dependências do projeto
+
+## 📜 Licença
+
+Este projeto é de uso interno para consultas e testes.
+Sinta-se livre para clonar e adaptar conforme necessário.
