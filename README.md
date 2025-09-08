@@ -23,11 +23,10 @@ Esta versão é destinada a estudo, portfólio e aprendizado de boas práticas e
 ---
 
 Exemplo de requisição utilizando **Postman**:
-  ```bash
-  http
-  GET http://localhost:5000/usuarios
-  Headers:
-    x-api-key: SUA_CHAVE_API
+http
+GET http://localhost:5000/usuarios
+Headers:
+x-api-key: SUA_CHAVE_API
 
 🛠 Tecnologias utilizadas
 
