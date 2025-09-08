@@ -32,53 +32,59 @@ Esta versão é destinada a estudo, portfólio e aprendizado de boas práticas e
 ## 📦 Como rodar o projeto
 
 1. Clone o repositório
-  ```bash
-  git clone https://github.com/joao-v-marques/api-consultas-linx.git
-  cd api-consultas-linx
+```bash
+git clone https://github.com/joao-v-marques/api-consultas-linx.git
+cd api-consultas-linx
+```
 
 2. Crie e ative o ambiente virtual
-  ```bash
-  python -m venv .venv
-  .venv\Scripts\activate   # Windows
-  source .venv/bin/activate # Linux/Mac
+```bash
+python -m venv .venv
+.venv\Scripts\activate   # Windows
+source .venv/bin/activate # Linux/Mac
+```
 
 3. Instale as dependencias
-  ```bash
-  pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
 
 4. Configure o arquivo .env na raiz do projeto
-  ```bash
-  API_KEY=sua_chave_api
-  SECRET_KEY=sua_secret_key
+```bash
+API_KEY=sua_chave_api
+SECRET_KEY=sua_secret_key
+```
 
 5. Configure seu arquivo configs.json (Com os dados da sua database) dentro da pasta database
-  ```bash
-  {
-      "banco": {
-          "user" : "seu_user",
-          "pass" : "sua_senha",
-          "dns" : "sua_dns_de_conexão",
-          "instant_client" : "o_caminho_do_seu_instantclient"
-      }
-  }
+```bash
+{
+    "banco": {
+        "user" : "seu_user",
+        "pass" : "sua_senha",
+        "dns" : "sua_dns_de_conexão",
+        "instant_client" : "o_caminho_do_seu_instantclient"
+    }
+}
+```
  
 6. Rode o servidor
-  ```bash
-  python app.py
+```bash
+python app.py
+```
 
 ## 📂 Estrutura do projeto
-
+```bash
 api-consultas-open-source/
-  ```bash
-  ├── app.py # Arquivo principal Flask
-  ├── config.py # Configuração de segurança (API Key)
-  ├── routes/ # Rotas da API
-  │ ├── bp_usuarios.py
-  │ └── bp_origens.py
-  ├── database/ # Conexão com Oracle
-  │ └── configs.json # Configurações do banco
-  ├── .env.example # Exemplo de variáveis de ambiente
-  └── requirements.txt # Dependências do projeto
+├── app.py # Arquivo principal Flask
+├── config.py # Configuração de segurança (API Key)
+├── routes/ # Rotas da API
+│ ├── bp_usuarios.py
+│ └── bp_origens.py
+├── database/ # Conexão com Oracle
+│ └── configs.json # Configurações do banco
+├── .env.example # Exemplo de variáveis de ambiente
+└── requirements.txt # Dependências do projeto
+```
 
 ## 📜 Licença
 
