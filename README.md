@@ -1,68 +1,65 @@
-## ⚠️ Atenção: Versão Open Source
+# 🔍 API de Consultas Linx (Open Source)
 
-Este repositório é a versão **open source** da API, destinada a estudo e portfólio.  
-Para utilizá-la em um ambiente de **produção real**, é necessário fazer ajustes importantes:
+![Python](https://img.shields.io/badge/python-3.11-blue?logo=python)
+![Flask](https://img.shields.io/badge/flask-2.3-red?logo=flask)
+![OracleDB](https://img.shields.io/badge/oracle-db-orange?logo=oracle)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-## 1. Queries (SELECTs)
-- As queries deste repositório usam **tabelas e colunas fictícias** para manter o projeto seguro.  
-- Substitua pelos nomes de tabelas e colunas reais do seu banco de dados de produção.
+Versão **open source** de uma API de consultas desenvolvida em **Python + Flask**, conectando-se ao **OracleDB**.  
+Esta versão é destinada a estudo, portfólio e aprendizado de boas práticas em APIs seguras.
 
-## 2. Configurações (`config.py`)
-- Ajuste parâmetros de segurança, como **SECRET_KEY** e outras configurações específicas do ambiente.  
-- Verifique se a lógica de autenticação, API Key ou JWT está configurada conforme a política de segurança da sua empresa.
-
-## 3. Variáveis de ambiente (`.env`)
-- Crie ou ajuste o arquivo `.env` com suas **credenciais reais**, como usuário e senha do banco de dados, API Key, endpoints e outros valores sensíveis.  
-- **Nunca** comite `.env` no repositório público; utilize `.env.example` para ilustrar a estrutura necessária.
-
-## 4. Boas práticas
-- Teste a API em um ambiente de desenvolvimento antes de migrar para produção.  
-- Garanta que as queries estão parametrizadas para evitar **SQL Injection**.  
-- Mantenha os logs e erros seguros, sem expor dados sensíveis.
+> ⚠️ **Atenção:** As queries neste repositório usam tabelas e colunas fictícias. Para uso em produção, substitua pelos dados reais e configure variáveis de ambiente corretamente.
 
 ---
 
-💡 Seguindo essas instruções, você pode migrar a versão open source para produção de forma segura e funcional, mantendo boas práticas de desenvolvimento e segurança.
+## 🚀 Funcionalidades
 
-## 🔒 Segurança
+- 🔹 Consulta de usuários e origens via API  
+- 🔹 Autenticação simples via **API Key**  
+- 🔹 Estrutura preparada para integração com banco Oracle  
+- 🔹 Exemplo seguro de parametrização de queries  
+- 🔹 Documentação clara para estudo e adaptação  
 
-- Autenticação via **API Key** no header (`x-api-key`)
-- Queries sempre com parâmetros nomeados para evitar SQL Injection  
+---
 
 Exemplo de requisição utilizando **Postman**:
+  ```bash
+  http
+  GET http://localhost:5000/usuarios
+  Headers:
+    x-api-key: SUA_CHAVE_API
 
-http
-GET http://localhost:5000/usuarios
-Headers:
-  x-api-key: SUA_CHAVE_API
+🛠 Tecnologias utilizadas
 
-## 🛠️ Tecnologias
-  - Python 3
-  - Flask
-  - oracledb
-  - (para conexão Oracle)
-  - python-dotenv
-  - (para variáveis de ambiente)
+  - Backend: Python 3, Flask
+  - Banco de Dados: OracleDB (via oracledb)
+  - Variáveis de ambiente: python-dotenv
+  - Segurança: API Key para autenticação
 
 ## 📦 Como rodar o projeto
 
 1. Clone o repositório
+  ```bash
   git clone https://github.com/joao-v-marques/api-consultas-linx.git
   cd api-consultas-linx
 
 2. Crie e ative o ambiente virtual
+  ```bash
   python -m venv .venv
   .venv\Scripts\activate   # Windows
   source .venv/bin/activate # Linux/Mac
 
 3. Instale as dependencias
+  ```bash
   pip install -r requirements.txt
 
 4. Configure o arquivo .env na raiz do projeto
+  ```bash
   API_KEY=sua_chave_api
   SECRET_KEY=sua_secret_key
 
 5. Configure seu arquivo configs.json (Com os dados da sua database) dentro da pasta database
+  ```bash
   {
       "banco": {
           "user" : "seu_user",
@@ -73,20 +70,22 @@ Headers:
   }
  
 6. Rode o servidor
+  ```bash
   python app.py
 
 ## 📂 Estrutura do projeto
 
 api-consultas-open-source/
-├── app.py # Arquivo principal Flask
-├── config.py # Configuração de segurança (API Key)
-├── routes/ # Rotas da API
-│ ├── bp_usuarios.py
-│ └── bp_origens.py
-├── database/ # Conexão com Oracle
-│ └── configs.json # Configurações do banco
-├── .env.example # Exemplo de variáveis de ambiente
-└── requirements.txt # Dependências do projeto
+  ```bash
+  ├── app.py # Arquivo principal Flask
+  ├── config.py # Configuração de segurança (API Key)
+  ├── routes/ # Rotas da API
+  │ ├── bp_usuarios.py
+  │ └── bp_origens.py
+  ├── database/ # Conexão com Oracle
+  │ └── configs.json # Configurações do banco
+  ├── .env.example # Exemplo de variáveis de ambiente
+  └── requirements.txt # Dependências do projeto
 
 ## 📜 Licença
 
