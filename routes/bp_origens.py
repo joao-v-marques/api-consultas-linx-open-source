@@ -44,6 +44,7 @@ def consulta_origem(origem):
 
 # Rota para consulta de uma origem especifica com filtros
 @bp_origens.route('/origens/<int:origem>/filtros', methods=['GET'])
+@require_api_key
 def consulta_origem_filtros(origem):
     empresa = request.args.get("empresa")
     revenda = request.args.get("revenda")
